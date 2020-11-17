@@ -1,5 +1,6 @@
 import React from "react";
 import UserService from "../services/user.service";
+import TaskList from "../components/taskList.component";
 
 export default class BoardAdmin extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class BoardAdmin extends React.Component {
       <div className="container">
         <header className="jumbotron">
           <h3>{this.state.content}</h3>
+          <TaskList/>
         </header>
       </div>
     );
