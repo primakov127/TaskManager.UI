@@ -3,14 +3,14 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AuthService from "./services/auth.service";
+import AuthService from "../services/auth.service";
 
-import Login from "./components/login.component";
-import Register from "./components/register.component";
-import Home from "./components/home.component";
-import Profile from "./components/profile.component";
-import BoardUser from "./components/board-user.component";
-import BoardAdmin from "./components/board-admin.component";
+import LoginPage from "../LoginPage";
+import RegisterPage from "../RegisterPage";
+import HomePage from "../HomePage";
+import ProfilePage from "../ProfilePage";
+import UserPage from "../UserPage";
+import AdminPage from "../AdminPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -102,12 +102,12 @@ class App extends React.Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/profile" component={Profile} />
-            <Route path="/user" component={BoardUser} />
-            <Route path="/admin" component={BoardAdmin} />
+            <Route exact path={["/", "/home"]} component={HomePage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/register" component={RegisterPage} />
+            <Route exact path="/profile" component={ProfilePage} />
+            <Route path="/user" component={UserPage} />
+            <Route path="/admin" component={AdminPage} />
           </Switch>
         </div>
       </div>

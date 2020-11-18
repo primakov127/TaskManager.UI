@@ -1,7 +1,7 @@
 import React from "react";
 import UserService from "../services/user.service";
 
-export default class Home extends React.Component {
+export default class UserPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -11,7 +11,7 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    UserService.getPublicContent().then(
+    UserService.getUserBoard().then(
       (response) => {
         this.setState({
           content: response.data,
@@ -20,7 +20,9 @@ export default class Home extends React.Component {
       (error) => {
         this.setState({
           content:
-            (error.response && error.response.data) ||
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
             error.message ||
             error.toString(),
         });

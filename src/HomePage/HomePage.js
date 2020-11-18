@@ -1,8 +1,7 @@
 import React from "react";
 import UserService from "../services/user.service";
-import TaskList from "../components/taskList.component";
 
-export default class BoardAdmin extends React.Component {
+export default class HomePage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +11,7 @@ export default class BoardAdmin extends React.Component {
   }
 
   componentDidMount() {
-    UserService.getAdminBoard().then(
+    UserService.getPublicContent().then(
       (response) => {
         this.setState({
           content: response.data,
@@ -21,9 +20,7 @@ export default class BoardAdmin extends React.Component {
       (error) => {
         this.setState({
           content:
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
+            (error.response && error.response.data) ||
             error.message ||
             error.toString(),
         });
@@ -36,7 +33,6 @@ export default class BoardAdmin extends React.Component {
       <div className="container">
         <header className="jumbotron">
           <h3>{this.state.content}</h3>
-          <TaskList/>
         </header>
       </div>
     );
