@@ -36,7 +36,7 @@ export default class AdminPage extends React.Component {
       <div className="container">
         <header className="jumbotron">
           <h3>{this.state.content}</h3>
-          <TaskList/>
+          <TaskList />
         </header>
       </div>
     );

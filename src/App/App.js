@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import AuthService from "../services/auth.service";
+import ProtectedRoute from "../components/protectedRoute.component";
 
 import LoginPage from "../LoginPage";
 import RegisterPage from "../RegisterPage";
@@ -106,8 +107,16 @@ class App extends React.Component {
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/register" component={RegisterPage} />
             <Route exact path="/profile" component={ProfilePage} />
-            <Route path="/user" component={UserPage} />
-            <Route path="/admin" component={AdminPage} />
+            <ProtectedRoute
+              path="/user"
+              component={UserPage}
+              allowed="ROLE_USER"
+            />
+            <ProtectedRoute
+              path="/admin"
+              component={AdminPage}
+              allowed="ROLE_ADMIN"
+            />
           </Switch>
         </div>
       </div>
