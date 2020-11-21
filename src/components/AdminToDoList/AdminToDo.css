@@ -1,0 +1,33 @@
+.adminToDo {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.listItem {
+  color: #fff;
+  width: 300px;
+  margin: 20px auto;
+  padding: 5px;
+  height: 50px;
+  background-color: #6ac467;
+  border-radius: 5px;
+  /* transition: ease-in-out; */
+}
+
+.btn {
+    color: #fff;
+    float: right;
+}
+
+.btn:hover {
+    color: red;
+}
+
+.wide {
+    overflow: hidden;
+}
+
+.listItem input {
+    width: 100%;
+}

@@ -2,6 +2,8 @@ import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import AuthService from "../services/auth.service";
 import ProtectedRoute from "../components/protectedRoute.component";
@@ -12,6 +14,8 @@ import HomePage from "../HomePage";
 import ProfilePage from "../ProfilePage";
 import UserPage from "../UserPage";
 import AdminPage from "../AdminPage";
+
+library.add(faTrash);
 
 class App extends React.Component {
   constructor(props) {
