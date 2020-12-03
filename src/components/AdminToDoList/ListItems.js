@@ -1,6 +1,7 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GrEdit } from "react-icons/gr";
 import FlipMove from "react-flip-move";
+import ListItem from './ListItem';
 
 import "./AdminToDo.css";
 
@@ -8,23 +9,30 @@ export default function ListItems(props) {
   const items = props.items;
   const listItems = items.map((item) => {
     return (
-      <div className="listItem" key={item.id}>
-        <div className="btn">
-          <FontAwesomeIcon
-            className="faicons"
-            icon="trash"
-            onClick={() => props.deleteItem(item.id)}
-          />
-        </div>
-        <div className="wide">
-          <input type="text" id={item.id} value={item.text} />
-        </div>
-      </div>
+      // <div className="list__item" key={item.id}>
+      //   <input
+      //     className="list__input"
+      //     type="text"
+      //     id={item.id}
+      //     value={item.text}
+      //   />
+      //   <div className="list__btn">
+      //     {/* <FontAwesome
+      //       // className="faicons"
+      //       //icon="trash"
+      //       // className="free-solid-svg-icons"
+      //       name="trash"
+      //       onClick={() => props.deleteItem(item.id)}
+      //     /> */}
+      //     <GrEdit />
+      //   </div>
+      // </div>
+      <ListItem key={item.id} id={item.id} text={item.text} deleteItem={props.deleteItem} updateItem={props.updateItem}/>
     );
   });
 
   return (
-    <div>
+    <div className="list">
       <FlipMove duration={300} easing="ease-in-out">
         {listItems}
       </FlipMove>

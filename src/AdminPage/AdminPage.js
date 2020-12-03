@@ -1,7 +1,6 @@
 import React from "react";
 import UserService from "../services/user.service";
 
-import TaskList from "../components/taskList.component";
 import AdminToDo from "../components/AdminToDoList";
 
 export default class AdminPage extends React.Component {
@@ -35,12 +34,8 @@ export default class AdminPage extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <header className="jumbotron">
-          <h3>{this.state.content}</h3>
-          {/* <TaskList /> */}
-          <AdminToDo/>
-        </header>
+      <div className="page-container">
+        <AdminToDo />
       </div>
     );
   }
