@@ -24,7 +24,10 @@ export default class ListItem extends React.Component {
   }
 
   updateItem() {
-    if (this.state.editedText !== "") {
+    if (
+      this.state.editedText !== "" &&
+      this.state.editedText !== this.props.text
+    ) {
       this.props.updateItem({ id: this.props.id, text: this.state.editedText });
     }
     this.changeView();
