@@ -23,23 +23,23 @@ export default class UserPage extends React.Component {
         list: response.data,
       });
     });
-    UserService.getUserBoard().then(
-      (response) => {
-        this.setState({
-          content: response.data,
-        });
-      },
-      (error) => {
-        this.setState({
-          content:
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString(),
-        });
-      }
-    );
+    // UserService.getUserBoard().then(
+    //   (response) => {
+    //     this.setState({
+    //       content: response.data,
+    //     });
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       content:
+    //         (error.response &&
+    //           error.response.data &&
+    //           error.response.data.message) ||
+    //         error.message ||
+    //         error.toString(),
+    //     });
+    //   }
+    // );
   }
 
   handleInput(e) {

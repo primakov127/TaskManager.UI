@@ -13,6 +13,8 @@ import HomePage from "../HomePage";
 import ProfilePage from "../ProfilePage";
 import UserPage from "../UserPage";
 import AdminPage from "../AdminPage";
+import MyTaskPage from "../MyTaskPage";
+import AdminUserPage from "../AdminUserPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -53,6 +55,11 @@ class App extends React.Component {
             <Route exact path="/register" component={RegisterPage} />
             <Route exact path="/profile" component={ProfilePage} />
             <ProtectedRoute
+              path="/myTasks"
+              component={MyTaskPage}
+              allowed="ROLE_USER"
+            />
+            <ProtectedRoute
               path="/user"
               component={UserPage}
               allowed="ROLE_USER"
@@ -60,6 +67,11 @@ class App extends React.Component {
             <ProtectedRoute
               path="/admin"
               component={AdminPage}
+              allowed="ROLE_ADMIN"
+            />
+            <ProtectedRoute
+              path="/adminUser"
+              component={AdminUserPage}
               allowed="ROLE_ADMIN"
             />
           </Switch>

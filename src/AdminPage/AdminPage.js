@@ -13,23 +13,23 @@ export default class AdminPage extends React.Component {
   }
 
   componentDidMount() {
-    UserService.getAdminBoard().then(
-      (response) => {
-        this.setState({
-          content: response.data,
-        });
-      },
-      (error) => {
-        this.setState({
-          content:
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString(),
-        });
-      }
-    );
+    // UserService.getAdminBoard().then(
+    //   (response) => {
+    //     this.setState({
+    //       content: response.data,
+    //     });
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       content:
+    //         (error.response &&
+    //           error.response.data &&
+    //           error.response.data.message) ||
+    //         error.message ||
+    //         error.toString(),
+    //     });
+    //   }
+    // );
   }
 
   render() {

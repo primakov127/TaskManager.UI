@@ -1,0 +1,33 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000;
+  padding: 10px;
+  background: #fff;
+}
+
+.modal__header {
+  display: flex;
+  border-bottom: 2px solid #000;
+  backdrop-filter: blur(10px);
+}
+
+.modal__title {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.modal__btn {
+  border: 1px solid #000;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.modal__btn:hover {
+  border-color: #00DE00;
+}
+
+.modal__content {
+  min-width: 300px;
+}

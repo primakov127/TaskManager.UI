@@ -57,7 +57,7 @@ export default class Header extends React.Component {
                   "nav-bar__link" +
                   (this.state.isNavMenu ? " nav-bar__link_responsive" : "")
                 }
-                to={"/user"}
+                to={"/myTasks"}
               >
                 My Tasks
               </Link>
@@ -68,7 +68,7 @@ export default class Header extends React.Component {
                   "nav-bar__link" +
                   (this.state.isNavMenu ? " nav-bar__link_responsive" : "")
                 }
-                href="#"
+                to={"/user"}
               >
                 Task List
               </Link>
@@ -81,7 +81,18 @@ export default class Header extends React.Component {
                 }
                 to={"/admin"}
               >
-                Admin Panel
+                Admin Task Panel
+              </Link>
+            )}
+            {showAdminBoard && (
+              <Link
+                className={
+                  "nav-bar__link" +
+                  (this.state.isNavMenu ? " nav-bar__link_responsive" : "")
+                }
+                to={"/adminUser"}
+              >
+                Admin User Panel
               </Link>
             )}
             <span className="nav-bar__icon" onClick={this.changeNavMenu}>

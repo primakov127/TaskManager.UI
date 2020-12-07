@@ -20,6 +20,15 @@ class MyTaskService {
     });
   }
 
+  updateUserTask(userId, taskId, completed) {
+    return axios.put(
+      API_TASK_URL +
+        `/updateUserTask?userId=${userId}&taskId=${taskId}&completed=${completed}`,
+      null,
+      { headers: authHeader() }
+    );
+  }
+
   deleteTask(taskId) {
     return axios.delete(API_TASK_URL + `/deleteTask?taskId=${taskId}`, {
       headers: authHeader(),

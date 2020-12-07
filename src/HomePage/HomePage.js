@@ -11,21 +11,21 @@ export default class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    UserService.getPublicContent().then(
-      (response) => {
-        this.setState({
-          content: response.data,
-        });
-      },
-      (error) => {
-        this.setState({
-          content:
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString(),
-        });
-      }
-    );
+    // UserService.getPublicContent().then(
+    //   (response) => {
+    //     this.setState({
+    //       content: response.data,
+    //     });
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       content:
+    //         (error.response && error.response.data) ||
+    //         error.message ||
+    //         error.toString(),
+    //     });
+    //   }
+    // );
   }
 
   render() {
