@@ -27,20 +27,40 @@ const email = (value) => {
 };
 
 const vusername = (value) => {
-  if (value.length < 3 || value.length > 20) {
+  if (value.length < 3 || value.length > 100) {
     return (
       <div className="alert alert-danger" role="alert">
-        The username must be between 3 and 20 characters.
+        The username must be between 3 and 100 characters.
+      </div>
+    );
+  }
+};
+
+const vfirstname = (value) => {
+  if (value.length < 3 || value.length > 100) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The First Name must be between 3 and 100 characters.
+      </div>
+    );
+  }
+};
+
+const vlastname = (value) => {
+  if (value.length < 3 || value.length > 100) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The Last Name must be between 3 and 100 characters.
       </div>
     );
   }
 };
 
 const vpassword = (value) => {
-  if (value.length < 6 || value.length > 40) {
+  if (value.length < 6 || value.length > 255) {
     return (
       <div className="alert alert-danger" role="alert">
-        The password must be between 6 and 40 characters.
+        The password must be between 6 and 255 characters.
       </div>
     );
   }
@@ -188,7 +208,7 @@ export default class Register extends React.Component {
                     name="firstName"
                     value={this.state.firstName}
                     onChange={this.onChangeFirstName}
-                    validations={[required]}
+                    validations={[required, vfirstname]}
                   />
                 </div>
 
@@ -200,7 +220,7 @@ export default class Register extends React.Component {
                     name="lastName"
                     value={this.state.lastName}
                     onChange={this.onChangeLastName}
-                    validations={[required]}
+                    validations={[required, vlastname]}
                   />
                 </div>
 
